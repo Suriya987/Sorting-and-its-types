@@ -1,0 +1,36 @@
+Time Complexity : O(N*N)
+Space complexity : O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>arr={13,46,24,52,20,9};
+    
+    int n=arr.size();
+    
+    // place the pointer at ith index  and then move gradually every iteration
+    
+    for(int i=0;i<n;i++)
+    {                          //  i
+        int currSmall=arr[i];  //  13 46 24 52 20 9
+        int idx=-1;
+        for(int j=i;j<n;j++)
+        {
+            if(currSmall>arr[j])
+            {
+                currSmall=arr[j];
+                idx=j;
+            }
+        }
+        if(idx!=-1){
+        int temp=arr[i];
+        arr[i]=currSmall;
+        arr[idx]=temp;
+        }
+    }
+    
+    for(int i=0;i<n;i++)
+     cout<<arr[i]<<" ";
+}
+
