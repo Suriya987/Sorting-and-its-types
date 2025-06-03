@@ -1,0 +1,30 @@
+
+Time complexity : O(N*N)
+Space complexity : O(1)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{                               
+    vector<int>arr={13,46,24,52,20,9};
+    
+    int n=arr.size();
+    
+     int Lastidx=n-1;
+      while(Lastidx>=0)
+      {
+          for(int i=0;i<Lastidx;i++)
+          {
+              if(arr[i]>arr[i+1])
+              {
+                  int temp=arr[i];
+                  arr[i]=arr[i+1];
+                  arr[i+1]=temp;
+              }
+          }
+          Lastidx--;
+      }
+      
+      for(int i=0;i<n;i++)
+      cout<<arr[i]<<" ";
+}
